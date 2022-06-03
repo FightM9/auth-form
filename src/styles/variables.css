@@ -1,0 +1,16 @@
+:root {
+    --primary: #4A67FF;
+    --primary-muted-1: #99A9FF;
+    --primary-muted-2: #F5F5F5;
+
+    --danger: #E26F6F;
+    --danger-muted-1: #FFC8C8;
+    --danger-muted-2: #F5E9E9;
+
+    --bg: #ffffff;
+
+    --text: #1F1F1F;
+    --input-text-color: #232323;
+
+    --border-radius: 8px
+}
