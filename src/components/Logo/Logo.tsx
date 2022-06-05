@@ -1,8 +1,8 @@
-import { LogoWraper } from './Logo.style';
+import { LogoWrapper } from './LogoStyle';
 
 const Logo = () => {
   return (
-    <LogoWraper>
+    <LogoWrapper>
       <svg
         width='180'
         height='54'
@@ -31,7 +31,7 @@ const Logo = () => {
           fill='currentColor'
         />
       </svg>
-    </LogoWraper>
+    </LogoWrapper>
   );
 };
 
