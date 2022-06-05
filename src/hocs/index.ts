@@ -1,4 +1,5 @@
 import { AuthProvider } from './AuthProvider';
-import { RequireAuth } from './RequireAuth';
+import { GuestRoute } from './GuestRoute';
+import { PrivateRoute } from './PrivateRoute';
 
-export { AuthProvider, RequireAuth };
+export { AuthProvider, PrivateRoute, GuestRoute};

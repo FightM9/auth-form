@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
-import { RequireAuthProps } from './types';
+import { RoleRouteProps } from './HocsTypes';
 
-const RequireAuth: FC<RequireAuthProps> = ({ children }) => {
+const PrivateRoute: FC<RoleRouteProps> = ({ children }) => {
   const location = useLocation();
   const auth = useAuth();
 
@@ -14,4 +14,4 @@ const RequireAuth: FC<RequireAuthProps> = ({ children }) => {
   return children;
 };
 
-export { RequireAuth };
+export { PrivateRoute };
