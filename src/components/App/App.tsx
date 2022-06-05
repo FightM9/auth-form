@@ -1,34 +1,42 @@
-import { AuthProvider, RequireAuth } from 'hocs';
-import { Login, NotFound, Profile } from 'pages';
 import { Link, Navigate, Route, Routes } from 'react-router-dom';
+import { AuthProvider, GuestRoute, PrivateRoute } from 'hocs';
+import { Login, NotFound, Profile } from 'pages';
+import { AppContent, AppLogo, AppWrapper } from './AppStyle';
+import Logo from 'components/Logo/Logo';
 
 const App = () => {
   return (
-    <div style={{ margin: '0 auto', width: 650 }}>
-      {/* DEV ONLY START*/}
-      <div style={{ display: 'flex', gap: '16px' }}>
-        <Link to='/'>Home</Link>
-        <Link to='/profile'>Profile</Link>
-        <Link to='/login'>Login</Link>
-        {/* DEV ONLY END*/}
-      </div>
-
-      <AuthProvider>
-        <Routes>
-          <Route path='/' element={<Navigate to={'/profile'} />} />
-          <Route path='/login' element={<Login />} />
-          <Route
-            path='/profile'
-            element={
-              <RequireAuth>
-                <Profile />
-              </RequireAuth>
-            }
-          />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </AuthProvider>
-    </div>
+    <AppWrapper>
+      <AppLogo>
+        <Link to='/'>
+          <Logo />
+        </Link>
+      </AppLogo>
+      <AppContent>
+        <AuthProvider>
+          <Routes>
+            <Route path='/' element={<Navigate to={'/profile'} />} />
+            <Route
+              path='/login'
+              element={
+                <GuestRoute>
+                  <Login />
+                </GuestRoute>
+              }
+            />
+            <Route
+              path='/profile'
+              element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              }
+            />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </AuthProvider>
+      </AppContent>
+    </AppWrapper>
   );
 };
 
