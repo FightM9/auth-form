@@ -11,6 +11,8 @@
 
 ![demo](./assets/demo.png)
 
+![demo2](./assets/demo2.png)
+
 ## Links
 
 - Solution URL: https://github.com/FightM9/auth-form
